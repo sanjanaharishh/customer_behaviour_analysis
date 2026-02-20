@@ -47,6 +47,13 @@ The dataset contains 3,900 customer transaction records with 18 features, includ
 * Removed redundant columns
 * Loaded cleaned data into PostgreSQL
 
+### Example Python Transformation
+
+```python
+df['review_rating'] = df.groupby('category')['review_rating'].transform(
+    lambda x: x.fillna(x.median())
+)
+```
 
 ### 2️⃣ SQL Analysis (PostgreSQL)
 
@@ -60,6 +67,23 @@ Performed analytical queries to answer business questions:
 * Customer segmentation (New, Returning, Loyal)
 * Top 3 products per category using window functions
 * Revenue contribution by age group
+
+### Example SQL Query: Customer Segmentation
+
+```sql
+WITH customer_type AS (
+    SELECT customer_id,
+           CASE
+               WHEN previous_purchases = 1 THEN 'New'
+               WHEN previous_purchases BETWEEN 2 AND 10 THEN 'Returning'
+               ELSE 'Loyal'
+           END AS customer_segment
+    FROM customer
+)
+SELECT customer_segment, COUNT(*) AS total_customers
+FROM customer_type
+GROUP BY customer_segment;
+```
 
 Advanced SQL techniques used:
 
