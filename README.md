@@ -8,9 +8,6 @@ The project combines Python (EDA & data cleaning), PostgreSQL (analytical querie
 The main objective was to answer:
 
 Do subscribed customers spend more?
-
 Which products and categories generate the most revenue?
-
 How do discounts influence purchasing?
-
 What customer segments contribute most to revenue?
