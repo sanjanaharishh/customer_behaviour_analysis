@@ -113,26 +113,6 @@ The dashboard allows filtering by:
 * Target high-performing age groups with personalised campaigns.
 
 
-
-## 📂 Project Structure
-
-customer-behavior-analytics/
-│
-├── data/
-│   └── customer_shopping_behavior.csv
-│
-├── notebooks/
-│   └── data_cleaning.ipynb
-│
-├── sql/
-│   └── analysis_queries.sql
-│
-├── dashboard/
-│   └── customer_behavior_dashboard.pbix
-│
-└── README.md
-
-
 ## 🎯 Skills Demonstrated
 
 * Data Cleaning & Transformation
